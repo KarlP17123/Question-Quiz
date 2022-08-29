@@ -87,4 +87,55 @@ function showScores() {
                  <a href="index.html">play again</a>   
             </div>
         `;
-}
+        let quizElement = document.getElementById("quiz");
+        quizElement.innerHTML = quizEndHTML; 
+ } 
+
+ // CREATE QUIZ QUESIONS 
+ let questions = [
+    new Question(
+        "Which city in usa has the most population?", ["Los Angeles", 
+        "Chicago", "New York", "San Diego"], "New York"
+        ),
+        new Question(
+            "How many people live in New York ?", ["8 million", 
+            "20 million", "8.5  million", "5 million"], "8.5  million"
+        ),
+        new Question(
+            "Which city is the world's largest by area?", ["Tokyo", 
+            "Mexico City", "London", "New York"], "Tokyo"
+        ),
+        new Question(
+            "Which city is the largest in Germany?", ["München", 
+            "Berlin", "Hamburg", "Köln"], "Berlin"
+        ),
+        new Question(
+            "Which city in Europe is the most expensive to live in?", ["Berlin", 
+            "London", "Zürich", "Genève"], "Zürich"
+        ),
+        new Question(
+            "Which city in the world has the most tourists?", ["London", 
+            "Tokyo", "Bangkok", "Dubai"], "Bangkok"
+        ),
+        new Question(
+            "Which city in the world has the most hours of sunshine?", ["Yuma", 
+            "London", "Paris", "Miami"], "Yuma"
+        ),
+        new Question(
+            "Which city is the capital of France?", ["Tokyo", 
+            "Nice", "Marseille", "Paris"], "Paris"
+        ),
+        new Question(
+            "Which city in europe has the most population?", ["Sankt Petersburg", 
+            "Moskva", "Paris", "London"], "Sankt Petersburg"
+        ),
+        new Question(
+            "Which city has the most rainy days?", ["Cherrapunijee", 
+            "Tokyo", "London", "New York"], "Cherrapunijee "
+        ),
+ ];
+
+ let quiz = new Quiz(questions);
+
+ // display question 
+ displayQuestion();
