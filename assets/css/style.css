@@ -1,1 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&display=swap');
+:root {
+    --white: #fff;
+    --black: #000000;
+    --grey: #919191;
+    --light-blue: #BCE0FD;
+    --color-sec: #2699FB;
+    --color-blue: #2699FB;
+    --color-pink: #F5B3EE;
+    --color-black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--light-blue);
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
