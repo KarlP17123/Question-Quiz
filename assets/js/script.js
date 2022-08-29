@@ -72,8 +72,8 @@ function showProgress() {
     let currentQuestionNumber = quiz.questionIndex + 1;
     let progressElement = document.getElementById("progress");
     progressElement.innerHTML = 
-    `Question ${currentQuestionNumber} of ${quiz.question.length}
-    `;
+    `Question ${currentQuestionNumber} of ${quiz.questions.
+        length}`;
 }
 
 // SHOW SCORE
@@ -82,7 +82,7 @@ function showScores() {
         `
             <h1>passed the quiz</h1>
             <h2 id="score">You Scored: ${quiz.score} of ${quiz.
-                question.length}</h2>
+                questions.length}</h2>
             <div class="quiz-repeat">
                  <a href="index.html">play again</a>   
             </div>
@@ -139,3 +139,26 @@ function showScores() {
 
  // display question 
  displayQuestion();
+
+ // ADD A COUNTDOWN
+ let time = 1;
+ let quizTimeInMinutes = time * 60 * 60;
+ quizTime = quizTimeInMinutes / 60; 
+
+ let counting = document.getElementById("count-down");
+
+ function startCountdown() {
+    let quizTimer = setInterval(function() {
+        if (quizTime <= 0) {
+             clearInterval(quizTimer);
+             showScores();
+        } else {
+            quizTime--;
+            let sec = Math.floor(quizTime % 60);
+            let min = Math.floor(quizTime / 60) % 60; 
+            counting.innerHTML = `TIME: ${min} : ${sec}`;
+        }
+    }, 1000)
+ }
+
+ startCountdown(); 
